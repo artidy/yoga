@@ -111,4 +111,24 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    class Options {
+        constructor(height, width, bg, fontSize, textAlign) {
+            this.height = height;
+            this.width = width;
+            this.bg = bg;
+            this.fontSize = fontSize;
+            this.textAlign = textAlign;
+        }
+
+        addDiv(message) {
+            let divBlock = document.createElement('div');
+            divBlock.textContent = message;
+            divBlock.style.cssText = `height: ${this.height}; width: ${this.width}; background: ${this.bg}; font-size: ${this.fontSize}; text-align: ${this.textAlign};`;
+            document.body.appendChild(divBlock);
+        }
+    }
+
+    let newDiv = new Options("200px", "200px", "red", "50px", "right");
+    newDiv.addDiv("Новый блок");
+
 });
